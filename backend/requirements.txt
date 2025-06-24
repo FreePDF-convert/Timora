@@ -3,3 +3,4 @@ Flask-Cors
 pymongo
 python-dotenv
 openai
+PyJWT==2.8.0
