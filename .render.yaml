@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: timora-backend
+    env: python
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        value: your-openai-api-key-here
+      - key: MONGO_URI
+        value: your-mongodb-uri-here
+
+  - type: web
+    name: timora-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    startCommand: "serve -s dist"
+    autoDeploy: true
